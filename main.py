@@ -3,6 +3,7 @@ import logging
 import sys
 from os import getenv
 
+import aiohttp
 from aiogram import Bot, Dispatcher, F
 from aiogram.client.default import DefaultBotProperties
 from aiogram.enums import ParseMode
@@ -15,6 +16,7 @@ dp = Dispatcher()
 
 storage = Calendar()
 
+HOLIDAY_API_URL = 'https://calendarific.com/api/v2/holidays'
 
 @dp.message(CommandStart())
 async def command_start_handler(message: Message) -> None:
@@ -76,10 +78,34 @@ async def command_start_handler(message: Message) -> None:
 
     date = args[1]
 
+    url = f"{HOLIDAY_API_URL}?api_key=GefRUHUFs4vxFE1bhoUEwIkCAJE8OSBJ&country=RU&year={date[:4]}"
+
     all_events = storage.read_day_event(date)
-    events_list = "\n".join(all_events)
+    events_list = "\n".join(all_events) if all_events else "Нет локальных событий."
+
     await message.answer(f"События на {date}:\n{events_list}")
 
+    async with aiohttp.ClientSession() as session:
+        async with session.get(url) as response:
+            if response.status == 200:
+                data = await response.json()
+                holidays = data.get('response', {}).get('holidays', [])
+
+                # Фильтруем праздники по указанной дате
+                matching_holidays = [
+                    holiday for holiday in holidays if holiday['date']['iso'].split('T')[0] == date  # Сравниваем только дату
+                ]
+
+                if not matching_holidays:
+                    await message.answer(f"Нет праздников на {date}.")
+                else:
+                    # Формируем список названий праздников
+                    holidays_list = "\n".join(
+                        [f"{holiday['name']} - {holiday['description']}" for holiday in matching_holidays]
+                    )
+                    await message.answer(f"Праздники на {date}:\n{holidays_list}")
+            else:
+                await message.answer(f"Ошибка при получении данных о праздниках. Код ошибки: {response.status}")
 
 async def main() -> None:
     TOKEN = getenv("BOT_TOKEN")

@@ -1,9 +1,10 @@
-class Event:
+class Event: #событие
     def __init__(self, time: str, description: str):
         self.event_time: str = time
         self.description: str = description
 
-class Day:
+
+class Day: #день
     def __init__(self, date: str):
         self.date: str = date
         self.events: list[Event] = []
@@ -25,7 +26,7 @@ class Day:
                 self.events.remove(ev)
 
 
-class Calendar:
+class Calendar: #хранилище дней
     def __init__(self):
         self.days: list[Day] = []
 

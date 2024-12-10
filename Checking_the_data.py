@@ -23,7 +23,7 @@ class Checking_the_data: #проверка даты и времени на ко�
         elif month in (4, 6, 9, 11) and day <= 30:
             return True
 
-        elif (month == 2 and day <= 28) or (year % 4 == 0 and year % 100 != 0 and month == 2 and day <= 29):
+        elif (month == 2 and day <= 28) or ((year % 4 == 0 or year % 400 == 0) and year % 100 != 0 and month == 2 and day <= 29):
             return True
 
         else:

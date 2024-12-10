@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f269ad6-c15c-41f7-bc19-da0b8c19cedd" name="Changes" comment="Exception handling">
+    <list default="true" id="5f269ad6-c15c-41f7-bc19-da0b8c19cedd" name="Changes" comment="Cosmetic changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Checking_the_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/Checking_the_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Planning_the_day.py" beforeDir="false" afterPath="$PROJECT_DIR$/Planning_the_day.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +22,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "MarinaMM-IDB-23-11"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/MarinaMM-IDB-23-11/Laba4.1.git",
+    "accountId": "2b881ea3-479c-4826-bd20-fe98c68bff8d"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -38,7 +47,7 @@
   "keyToString": {
     "Python.main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "D:/2 курс/прикладная прога/bot"
   },
   "keyToStringList": {
@@ -109,7 +118,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733750551970</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Cosmetic changes">
+      <option name="closed" value="true" />
+      <created>1733755503333</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1733755503333</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -126,6 +143,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Base" />
     <MESSAGE value="Exception handling" />
-    <option name="LAST_COMMIT_MESSAGE" value="Exception handling" />
+    <MESSAGE value="Cosmetic changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cosmetic changes" />
   </component>
 </project>

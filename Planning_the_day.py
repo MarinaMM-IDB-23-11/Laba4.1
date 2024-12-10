@@ -9,7 +9,7 @@ class Day: #день
         self.date: str = date
         self.events: list[Event] = []
 
-    def create_event(self, event: Event):
+    def create_event(self, event: Event) -> None:
         self.events.append(event)
 
     def read_events(self) -> list[str]:
@@ -20,7 +20,7 @@ class Day: #день
             if ev.event_time == time:
                 ev.description = description
 
-    def delete_event(self, time: str):
+    def delete_event(self, time: str) -> None:
         for ev in self.events:
             if ev.event_time == time:
                 self.events.remove(ev)
@@ -30,20 +30,20 @@ class Calendar: #хранилище дней
     def __init__(self):
         self.days: list[Day] = []
 
-    def create_day_event(self, day: Day):
+    def create_day_event(self, day: Day) -> None:
         self.days.append(day)
 
-    def read_day_event(self, daytime):
+    def read_day_event(self, daytime: str) -> list[str]:
         for day in self.days:
             if day.date == daytime:
                 return day.read_events()
 
-    def update_day_event(self, daytime, time, description):
+    def update_day_event(self, daytime: str, time: str, description: str) -> None:
         for day in self.days:
             if day.date == daytime:
                 day.update_event(time, description)
 
-    def delete_day_event(self, daytime, time):
+    def delete_day_event(self, daytime: str, time: str) -> None:
         for day in self.days:
             if day.date == daytime:
                 day.delete_event(time)
